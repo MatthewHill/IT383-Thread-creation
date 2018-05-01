@@ -1,0 +1,13 @@
+Listing4.1 Shows simple thread creation.  When it is run it simply creates a thread that will continue to write x's and o's onto the screen.
+This is because the main program is printing o's, while the thread is printing x's.  On this system it looks like the frequency in which they are generated is random
+and they are almost always printed with multiple of each in a row.  
+Listing4.2 Shows the creation of two different threads. They create 30,000 x's and 20,000 o's respectively.  The issue with the written code is that the main program
+will exit before the threads have a chance to execute.  I solved this by placeing join functions at the end of the main function.  When the program executes it prints
+out alternating chunks of x's and o's and then prints out the remained of the x's because the o's usually finish first.  The program only exits when both threads are complete.
+Listing4.3 Show the fix for Listing4.2.  Since I fixed 4.2 before looking at this I felt happy to see that my fix was nearly identical to what was portrayed in the book.  I've included the books solution regardless.
+Listing4.4 Shows a function that computes a prime value.  It uses succesive division to figure out if the number is prime. 
+Becuase computing primes, especially in this inefficient way, is very time consuming for larger numbers, this function is a good example to show how other things can be executed
+while the program is waiting for the thread to join.  There is space in the program to perform a different task while this thread waits for completion.  
+Listing4.5 shows how to create a detatched thread.  Having a detatched thread can be useful because we don't have to worry about cleaning it up later with a thread join call.
+However, you must be careful which threads you detatch as they are not able to be reattatched later.  Listing 4.5 does not do much other than create the detatched thread
+and leave room for the user to do work, but it serves as an example to how the program will compile despite the thread not being joined.  

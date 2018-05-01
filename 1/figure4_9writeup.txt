@@ -1,0 +1,9 @@
+The purpose of this program is to find the sum of a number n with the numbers between 0 and n.
+This program does this by creating threads. 
+The parameter "sum" is shared by all threads so that it may be modified by each peice to form the final sum.
+The first thing we do in main is define tid to be a thread identifier and attr to keep track of the thread attributes.
+We then do some error checking: We check to make sure there are two arguments because this program will only take an integer value.
+we also check that the value given by the user is either 0 or a positive number because our program does not work on negatives.
+The program then sets our attributes for thread to a default value and creates the thread.  The thread runs a function that we define after main.
+This function finds the sum of the values and then exits the thread.  Back in the main function, once the thread exits, main calls a join command that returns the thread
+based on its identifier.  The program then prints out the sum.  
